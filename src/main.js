@@ -1,9 +1,33 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router.js";
-import vuetify from "./plugins/vuetify";
-import { loadFonts } from "./plugins/webfontloader";
+import { createVuetify } from "vuetify";
 
-loadFonts();
+import "vuetify/dist/vuetify.css";
+import '@fortawesome/fontawesome-free/css/all.css';
 
-createApp(App).use(vuetify).use(router).mount("#app");
+const TITheme = {
+  dark: false,
+  colors: {
+    primary: "#1E73BE",
+    secondary: "#E1E1E1",
+    accent: "#47121D",
+    success: "#47121D",
+    error: "#EE5044",
+    teal: "#63BAC0",
+    blue: "#196CA2",
+    yellow: "#F8C545",
+    darkblue: "#032F45",
+  },
+};
+
+const vuetify = createVuetify({
+  theme: {
+    defaultTheme: "OCTheme",
+    themes: {
+      OCTheme: TITheme,
+    },
+  },
+});
+
+createApp(App).use(router).use(vuetify).mount("#app");
