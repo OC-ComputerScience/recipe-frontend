@@ -3,6 +3,7 @@ import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import RecipeIngredientServices from "../services/RecipeIngredientServices.js";
 import RecipeStepServices from "../services/RecipeStepServices";
+import RecipeReports from "../reports/RecipeReports.js";
 
 const router = useRouter();
 
@@ -69,6 +70,12 @@ function navigateToEdit() {
           </v-chip>
         </v-col>
         <v-col class="d-flex justify-end">
+          <v-icon
+            v-if="user !== null"
+            size="small"
+            icon="mdi-file-pdf-box"
+            @click="RecipeReports.generateRecipePDF(recipe)"
+          ></v-icon>
           <v-icon
             v-if="user !== null"
             size="small"
