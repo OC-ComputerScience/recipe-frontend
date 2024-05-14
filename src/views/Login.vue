@@ -19,9 +19,10 @@ const user = ref({
 });
 
 onMounted(async () => {
-  if (localStorage.getItem("user") !== null) {
-    router.push({ name: "recipes" });
-  }
+  localStorage.removeItem("user");
+  // if (localStorage.getItem("user") !== null) {
+  //   router.push({ name: "recipes" });
+  // }
 });
 
 function navigateToRecipes() {
