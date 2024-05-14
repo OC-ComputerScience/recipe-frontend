@@ -74,7 +74,7 @@ function navigateToEdit() {
             v-if="user !== null"
             size="small"
             icon="mdi-file-pdf-box"
-            @click="RecipeReports.generateRecipePDF(recipe)"
+            @click.stop="RecipeReports.generateRecipePDF(recipe)"
           ></v-icon>
           <v-icon
             v-if="user !== null"
