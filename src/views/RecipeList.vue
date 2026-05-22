@@ -15,7 +15,7 @@ const snackbar = ref({
 const newRecipe = ref({
   name: "",
   description: "",
-  servings: 0,
+  servings: 2,
   time: "30",
   isPublished: false,
 });
